@@ -11,6 +11,16 @@ return new class extends Migration
      */
     public function up(): void
     {
+        Schema::create('activitats', function (Blueprint $table) {
+            $table->id();
+            $table->string('description');
+            $table->foreignId('programacion_id')->constrained();
+            $table->foreignId('uf_id')->constrained();
+            $table->foreignId('ra_ids')->constrained();
+            $table->foreignId('criteris_ids')->constrained();
+            $table->foreignId('contingut_ids')->constrained();
+            $table->timestamps();
+        });
         Schema::create('activitat_ra', function (Blueprint $table) {
             $table->id();
             $table->foreignId('activitat_id')->constrained();
@@ -29,16 +39,6 @@ return new class extends Migration
             $table->foreignId('contingut_id')->constrained();
             $table->timestamps();
         });
-        Schema::create('activitats', function (Blueprint $table) {
-            $table->id();
-            $table->string('description');
-            $table->foreignId('programacion_id')->constrained();
-            $table->foreignId('uf_id')->constrained();
-            $table->foreignId('ra_ids')->constrained();
-            $table->foreignId('criteris_ids')->constrained();
-            $table->foreignId('contingut_ids')->constrained();
-            $table->timestamps();
-        });
     }
 
     /**
@@ -46,9 +46,9 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('activitats');
         Schema::dropIfExists('activitat_ra');
         Schema::dropIfExists('activitat_criteri');
         Schema::dropIfExists('activitat_contingut');
+        Schema::dropIfExists('activitats');
     }
 };
