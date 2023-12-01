@@ -13,6 +13,11 @@ return new class extends Migration
     {
         Schema::create('ufs', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->int('hours');
+            // $table->unsignedBigInteger('modul_id');
+            // $table->foreign('modul_id')->references('id')->on('moduls');
+            $table->foreignId('modul_id')->constrained();
             $table->timestamps();
         });
     }
