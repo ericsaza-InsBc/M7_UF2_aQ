@@ -24,7 +24,7 @@ return new class extends Migration
         Schema::create('activitat_ra', function (Blueprint $table) {
             $table->id();
             $table->foreignId('activitat_id')->constrained();
-            $table->foreignId('raid')->constrained();
+            $table->foreignId('ra_id')->constrained();
             $table->timestamps();
         });
         Schema::create('activitat_criteri', function (Blueprint $table) {
