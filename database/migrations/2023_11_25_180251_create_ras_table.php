@@ -11,13 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('ufs', function (Blueprint $table) {
+        Schema::create('ras', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->integer('hours');
-            // $table->unsignedBigInteger('modul_id');
-            // $table->foreign('modul_id')->references('id')->on('moduls');
-            $table->foreignId('modul_id')->constrained();
+            $table->foreignId('uf_id')->constrained();
             $table->timestamps();
         });
     }
@@ -27,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('ufs');
+        Schema::dropIfExists('ras');
     }
 };

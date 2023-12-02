@@ -13,6 +13,9 @@ return new class extends Migration
     {
         Schema::create('moduls', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->integer('hours');
+            $table->string('description')->nullable();
             $table->timestamps();
         });
     }
