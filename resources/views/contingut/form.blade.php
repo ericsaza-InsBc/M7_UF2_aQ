@@ -7,9 +7,12 @@
             {!! $errors->first('description', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
-            {{ Form::label('ra_id') }}
-            {{ Form::text('ra_id', $contingut->ra_id, ['class' => 'form-control' . ($errors->has('ra_id') ? ' is-invalid' : ''), 'placeholder' => 'Ra Id']) }}
-            {!! $errors->first('ra_id', '<div class="invalid-feedback">:message</div>') !!}
+            {{ Form::label('RA') }}
+            <select name="ra_id" id="ra_id" class="form-control">
+                @foreach (\App\Models\Ra::all() as $ra)
+                    <option value="{{ $ra->id }}" {{ $ra->id == $contingut->ra_id ? 'selected' : ''}}>{{ $ra->name }}</option>
+                @endforeach
+            </select>
         </div>
 
     </div>

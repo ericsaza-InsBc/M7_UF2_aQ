@@ -12,6 +12,11 @@
             {!! $errors->first('email', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
+            {{ Form::label('password') }}
+            {{ Form::text('password', "", ['class' => 'form-control' . ($errors->has('password') ? ' is-invalid' : ''), 'placeholder' => 'Password']) }}
+            {!! $errors->first('password', '<div class="invalid-feedback">:message</div>') !!}
+        </div>
+        {{-- <div class="form-group">
             {{ Form::label('two_factor_secret') }}
             {{ Form::text('two_factor_secret', $user->two_factor_secret, ['class' => 'form-control' . ($errors->has('two_factor_secret') ? ' is-invalid' : ''), 'placeholder' => 'Two Factor Secret']) }}
             {!! $errors->first('two_factor_secret', '<div class="invalid-feedback">:message</div>') !!}
@@ -35,7 +40,7 @@
             {{ Form::label('profile_photo_path') }}
             {{ Form::text('profile_photo_path', $user->profile_photo_path, ['class' => 'form-control' . ($errors->has('profile_photo_path') ? ' is-invalid' : ''), 'placeholder' => 'Profile Photo Path']) }}
             {!! $errors->first('profile_photo_path', '<div class="invalid-feedback">:message</div>') !!}
-        </div>
+        </div> --}}
 
     </div>
     <div class="box-footer mt20">

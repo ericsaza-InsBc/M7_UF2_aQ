@@ -7,9 +7,12 @@
             {!! $errors->first('name', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
-            {{ Form::label('uf_id') }}
-            {{ Form::text('uf_id', $ra->uf_id, ['class' => 'form-control' . ($errors->has('uf_id') ? ' is-invalid' : ''), 'placeholder' => 'Uf Id']) }}
-            {!! $errors->first('uf_id', '<div class="invalid-feedback">:message</div>') !!}
+            {{ Form::label('Uf') }}
+            <select name="uf_id" id="uf_id" class="form-control">
+                @foreach (\App\Models\Uf::all() as $uf)
+                    <option value="{{ $uf->id }}" {{ $uf->id == $ra->uf_id ? 'selected' : ''}}>{{ $uf->name }}</option>
+                @endforeach
+            </select>
         </div>
 
     </div>

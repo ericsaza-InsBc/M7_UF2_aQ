@@ -22,18 +22,38 @@
                     </x-nav-link>
                 </div>
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link href="/moduls" :active="request()->routeIs('moduls*')">
-                        {{ __('Moduls') }}
-                    </x-nav-link>
-                </div>
-                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                     <x-nav-link href="/programacions" :active="request()->routeIs('programacions*')">
                         {{ __('Programacions') }}
                     </x-nav-link>
                 </div>
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                    <x-nav-link href="/moduls" :active="request()->routeIs('moduls*')">
+                        {{ __('Moduls') }}
+                    </x-nav-link>
+                </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                     <x-nav-link href="/ufs" :active="request()->routeIs('ufs*')">
                         {{ __('UFs') }}
+                    </x-nav-link>
+                </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                    <x-nav-link href="/ras" :active="request()->routeIs('ras*')">
+                        {{ __('RAs') }}
+                    </x-nav-link>
+                </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                    <x-nav-link href="/criteris" :active="request()->routeIs('criteris*')">
+                        {{ __('Criteris') }}
+                    </x-nav-link>
+                </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                    <x-nav-link href="/continguts" :active="request()->routeIs('continguts*')">
+                        {{ __('Continguts') }}
+                    </x-nav-link>
+                </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                    <x-nav-link href="/activitats" :active="request()->routeIs('activitats*')">
+                        {{ __('Activitats') }}
                     </x-nav-link>
                 </div>
             </div>

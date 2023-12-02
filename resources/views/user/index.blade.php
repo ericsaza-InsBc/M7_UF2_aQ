@@ -38,11 +38,11 @@
                                         
 										<th>Name</th>
 										<th>Email</th>
-										<th>Two Factor Secret</th>
+										{{-- <th>Two Factor Secret</th>
 										<th>Two Factor Recovery Codes</th>
 										<th>Two Factor Confirmed At</th>
 										<th>Current Team Id</th>
-										<th>Profile Photo Path</th>
+										<th>Profile Photo Path</th> --}}
 
                                         <th></th>
                                     </tr>

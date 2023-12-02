@@ -13,7 +13,7 @@
         </div>
         <div class="form-group">
             {{ Form::label('Mòdul') }}
-            <select name="modul_id" id="modul_id">
+            <select name="modul_id" id="modul_id" class="form-control">
                 @foreach (\App\Models\Modul::all() as $modul)
                     <option value="{{ $modul->id }}" {{ $modul->id == $uf->modul_id ? 'selected' : ''}}>{{ $modul->name }}</option>
                 @endforeach

@@ -37,7 +37,9 @@
                                         <th>No</th>
                                         
 										<th>Description</th>
-										<th>Ra Id</th>
+										<th>RA</th>
+										<th>Unitat Formativa</th>
+										<th>Modul</th>
 
                                         <th></th>
                                     </tr>
@@ -48,7 +50,9 @@
                                             <td>{{ ++$i }}</td>
                                             
 											<td>{{ $criteri->description }}</td>
-											<td>{{ $criteri->ra_id }}</td>
+											<td>{{ $criteri->ra->name }}</td>
+											<td>{{ $criteri->ra->uf->name }}</td>
+											<td>{{ $criteri->ra->uf->modul->name }}</td>
 
                                             <td>
                                                 <form action="{{ route('criteris.destroy',$criteri->id) }}" method="POST">

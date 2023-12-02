@@ -12,14 +12,24 @@
             {!! $errors->first('academic_year', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
-            {{ Form::label('modul_id') }}
-            {{ Form::text('modul_id', $programacion->modul_id, ['class' => 'form-control' . ($errors->has('modul_id') ? ' is-invalid' : ''), 'placeholder' => 'Modul Id']) }}
-            {!! $errors->first('modul_id', '<div class="invalid-feedback">:message</div>') !!}
+            <div class="form-group">
+                {{ Form::label('Mòdul') }}
+                <select name="modul_id" id="modul_id" class="form-control">
+                    @foreach (\App\Models\Modul::all() as $modul)
+                        <option value="{{ $modul->id }}" {{ $modul->id == $programacion->modul_id ? 'selected' : ''}}>{{ $modul->name }}</option>
+                    @endforeach
+                </select>
+            </div>
         </div>
         <div class="form-group">
-            {{ Form::label('user_id') }}
-            {{ Form::text('user_id', $programacion->user_id, ['class' => 'form-control' . ($errors->has('user_id') ? ' is-invalid' : ''), 'placeholder' => 'User Id']) }}
-            {!! $errors->first('user_id', '<div class="invalid-feedback">:message</div>') !!}
+            <div class="form-group">
+                {{ Form::label('Usuari') }}
+                <select name="user_id" id="user_id" class="form-control">
+                    @foreach (\App\Models\User::all() as $user)
+                        <option value="{{ $user->id }}" {{ $user->id == $programacion->user_id ? 'selected' : ''}}>{{ $user->name }}</option>
+                    @endforeach
+                </select>
+            </div>
         </div>
 
     </div>

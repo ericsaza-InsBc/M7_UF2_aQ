@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use Illuminate\Support\Facades\Hash;
 
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -43,12 +44,23 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        request()->validate(User::$rules);
 
-        $user = User::create($request->all());
+        $request->validate([
+            'email' => 'required|email|unique:users,email',
+            'password' => 'required|min:8', // Asegúrate de ajustar las reglas de validación según tus necesidades
+            // Otros campos y reglas de validación según sea necesario
+        ]);
 
-        return redirect()->route('users.index')
-            ->with('success', 'User created successfully.');
+        $user = new User();
+        $user->name = $request->input('name');
+        $user->email = $request->input('email');
+        $user->name = $request->input('name');
+        $user->password = Hash::make($request->input('password')); // Encripta la contraseña con bcrypt
+        // Otros campos según sea necesario
+
+        $user->save();
+
+        return redirect()->route('users.index')->with('success', 'Usuario creado correctamente');
     }
 
     /**
@@ -86,7 +98,6 @@ class UserController extends Controller
      */
     public function update(Request $request, User $user)
     {
-        request()->validate(User::$rules);
 
         $user->update($request->all());
 
