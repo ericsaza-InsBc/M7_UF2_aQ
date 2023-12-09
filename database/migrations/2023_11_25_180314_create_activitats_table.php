@@ -13,7 +13,8 @@ return new class extends Migration
     {
         Schema::create('activitats', function (Blueprint $table) {
             $table->id();
-            $table->string('description');
+            $table->integer('hours');
+            $table->text('description');
             $table->foreignId('programacion_id')->constrained();
             $table->foreignId('uf_id')->constrained();
             $table->foreignId('ra_ids')->constrained();

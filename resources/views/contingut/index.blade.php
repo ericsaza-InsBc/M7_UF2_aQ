@@ -35,8 +35,8 @@
                                 <thead class="thead">
                                     <tr>
                                         <th>No</th>
-                                        
-										<th>Description</th>
+
+										<th>Continguts</th>
 										<th>RA</th>
 										<th>Unitat Formativa</th>
 										<th>Modul</th>
@@ -48,8 +48,8 @@
                                     @foreach ($continguts as $contingut)
                                         <tr>
                                             <td>{{ ++$i }}</td>
-                                            
-											<td>{{ $contingut->description }}</td>
+
+											<td>{{ $contingut->continguts }}</td>
 											<td>{{ $contingut->ra->name }}</td>
 											<td>{{ $contingut->ra->uf->name }}</td>
 											<td>{{ $contingut->ra->uf->modul->name }}</td>
