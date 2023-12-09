@@ -35,7 +35,7 @@
                                 <thead class="thead">
                                     <tr>
                                         <th>No</th>
-                                        
+
 										<th>Description</th>
 										<th>Academic Year</th>
 										<th>Modul</th>
@@ -48,7 +48,7 @@
                                     @foreach ($programacions as $programacion)
                                         <tr>
                                             <td>{{ ++$i }}</td>
-                                            
+
 											<td>{{ $programacion->description }}</td>
 											<td>{{ $programacion->academic_year }}</td>
 											<td>{{ $programacion->modul->name }}</td>

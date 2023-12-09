@@ -37,11 +37,11 @@
                                         <th>No</th>
                                         
 										<th>Description</th>
-										<th>Programacion Id</th>
-										<th>Uf Id</th>
-										<th>Ra Ids</th>
-										<th>Criteris Ids</th>
-										<th>Contingut Ids</th>
+										<th>Programacio</th>
+										<th>UF</th>
+										<th>RA</th>
+										<th>Criteris</th>
+										<th>Contingut</th>
 
                                         <th></th>
                                     </tr>

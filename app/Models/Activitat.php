@@ -1,8 +1,9 @@
 <?php
 
 namespace App\Models;
-
+use App\Models\Contingut;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 /**
  * Class Activitat
@@ -30,7 +31,7 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Activitat extends Model
 {
-    
+
     static $rules = [
 		'description' => 'required',
 		'programacion_id' => 'required',
@@ -50,30 +51,22 @@ class Activitat extends Model
     protected $fillable = ['description','programacion_id','uf_id','ra_ids','criteris_ids','contingut_ids'];
 
 
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
-     */
-    public function activitatContinguts()
+
+    public function continguts(): BelongsToMany
     {
-        return $this->hasMany('App\Models\ActivitatContingut', 'activitat_id', 'id');
+       return $this->belongsToMany(Contingut::class);
     }
-    
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
-     */
-    public function activitatCriteris()
+
+    public function criteris(): BelongsToMany
     {
-        return $this->hasMany('App\Models\ActivitatCriteri', 'activitat_id', 'id');
+        return $this->belongsToMany(Criteri::class);
     }
-    
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
-     */
-    public function activitatRas()
+
+    public function ras(): BelongsToMany
     {
-        return $this->hasMany('App\Models\ActivitatRa', 'activitat_id', 'id');
+        return $this->belongsToMany(Ra::class);
     }
-    
+
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
@@ -81,7 +74,7 @@ class Activitat extends Model
     {
         return $this->hasOne('App\Models\Contingut', 'id', 'contingut_ids');
     }
-    
+
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
@@ -89,7 +82,7 @@ class Activitat extends Model
     {
         return $this->hasOne('App\Models\Criteri', 'id', 'criteris_ids');
     }
-    
+
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
@@ -97,7 +90,7 @@ class Activitat extends Model
     {
         return $this->hasOne('App\Models\Programacion', 'id', 'programacion_id');
     }
-    
+
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
@@ -105,7 +98,7 @@ class Activitat extends Model
     {
         return $this->hasOne('App\Models\Ra', 'id', 'ra_ids');
     }
-    
+
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
@@ -113,6 +106,6 @@ class Activitat extends Model
     {
         return $this->hasOne('App\Models\Uf', 'id', 'uf_id');
     }
-    
+
 
 }
