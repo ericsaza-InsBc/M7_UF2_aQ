@@ -1,8 +1,9 @@
 <?php
 
 namespace App\Models;
-
+use App\Models\Contingut;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 /**
  * Class Activitat
@@ -51,28 +52,34 @@ class Activitat extends Model
     protected $fillable = ['description', 'hours', 'programacion_id','uf_id','ra_ids','criteris_ids','contingut_ids'];
 
 
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
-     */
-    public function activitatContinguts()
+
+    public function continguts(): BelongsToMany
     {
-        return $this->hasMany('App\Models\ActivitatContingut', 'activitat_id', 'id');
+       return $this->belongsToMany(Contingut::class);
     }
 
+<<<<<<< HEAD
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function activitatCriteris()
+=======
+    public function criteris(): BelongsToMany
+>>>>>>> 84a744dfb450146dd3571c6b346e13da7789f44c
     {
-        return $this->hasMany('App\Models\ActivitatCriteri', 'activitat_id', 'id');
+        return $this->belongsToMany(Criteri::class);
     }
 
+<<<<<<< HEAD
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function activitatRas()
+=======
+    public function ras(): BelongsToMany
+>>>>>>> 84a744dfb450146dd3571c6b346e13da7789f44c
     {
-        return $this->hasMany('App\Models\ActivitatRa', 'activitat_id', 'id');
+        return $this->belongsToMany(Ra::class);
     }
 
     /**

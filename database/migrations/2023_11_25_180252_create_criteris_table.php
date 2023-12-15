@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('criteris', function (Blueprint $table) {
             $table->id();
-            $table->string('description');
+            $table->string('criteris');
             $table->foreignId('ra_id')->constrained();
             $table->timestamps();
         });

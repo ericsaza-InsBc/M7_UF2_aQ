@@ -7,6 +7,7 @@
             {!! $errors->first('description', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
+<<<<<<< HEAD
             {{ Form::label('Hours') }}
             {{ Form::text('hours', $activitat->hours, ['class' => 'form-control' . ($errors->has('hours') ? ' is-invalid' : ''), 'placeholder' => 'Hours']) }}
             {!! $errors->first('hours', '<div class="invalid-feedback">:message</div>') !!}
@@ -55,6 +56,38 @@
                 @endforeach
             </select>
             {!! $errors->first('contingut_ids', '<div class="invalid-feedback">:message</div>') !!}
+=======
+            {{ Form::label('Programació') }}
+            <select name="programacion_id" id="programacion_id" class="form-control">
+                @foreach (\App\Models\Programacion::all() as $programacion)
+                    <option value="{{ $programacion->id }}" {{ $programacion->id == $activitat->programacion_id ? 'selected' : ''}}>{{ $programacion->description }}</option>
+                @endforeach
+            </select>
+        </div>
+        <div class="form-group">
+            {{ Form::label('RA') }}
+            <select name="ra_id" id="ra_id" class="form-control">
+                @foreach (\App\Models\Ra::all() as $ra)
+                    <option value="{{ $ra->id }}" {{ $ra->id == $activitat->ra_id ? 'selected' : ''}}>{{ $ra->name }}</option>
+                @endforeach
+            </select>
+        </div>
+        <div class="form-group">
+            {{ Form::label('Criteris') }}
+            <select name="criteri_id" id="criteri_id" class="form-control">
+                @foreach (\App\Models\Criteri::all() as $criteri)
+                    <option value="{{ $criteri->id }}" {{ $criteri->id == $activitat->criteri_id ? 'selected' : ''}}>{{ $criteri->criteris }}</option>
+                @endforeach
+            </select>
+        </div>
+        <div class="form-group">
+            {{ Form::label('Continguts') }}
+            <select name="contingut_id" id="contingut_id" class="form-control">
+                @foreach (\App\Models\Contingut::all() as $contingut)
+                    <option value="{{ $contingut->id }}" {{ $contingut->id == $activitat->ra_id ? 'selected' : ''}}>{{ $contingut->continguts }}</option>
+                @endforeach
+            </select>
+>>>>>>> 84a744dfb450146dd3571c6b346e13da7789f44c
         </div>
 
     </div>

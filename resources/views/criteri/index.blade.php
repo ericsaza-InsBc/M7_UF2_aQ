@@ -35,8 +35,8 @@
                                 <thead class="thead">
                                     <tr>
                                         <th>No</th>
-                                        
-										<th>Description</th>
+
+										<th>Criteris</th>
 										<th>RA</th>
 										<th>Unitat Formativa</th>
 										<th>Modul</th>
@@ -48,8 +48,8 @@
                                     @foreach ($criteris as $criteri)
                                         <tr>
                                             <td>{{ ++$i }}</td>
-                                            
-											<td>{{ $criteri->description }}</td>
+
+											<td>{{ $criteri->criteris }}</td>
 											<td>{{ $criteri->ra->name }}</td>
 											<td>{{ $criteri->ra->uf->name }}</td>
 											<td>{{ $criteri->ra->uf->modul->name }}</td>

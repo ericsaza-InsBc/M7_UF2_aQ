@@ -37,12 +37,11 @@
                                         <th>No</th>
 
 										<th>Description</th>
-										<th>Hours</th>
 										<th>Programacio</th>
 										<th>UF</th>
 										<th>RA</th>
 										<th>Criteris</th>
-										<th>Continguts</th>
+										<th>Contingut</th>
 
                                         <th></th>
                                     </tr>

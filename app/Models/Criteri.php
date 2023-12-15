@@ -21,9 +21,9 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Criteri extends Model
 {
-    
+
     static $rules = [
-		'description' => 'required',
+		'criteris' => 'required',
 		'ra_id' => 'required',
     ];
 
@@ -44,7 +44,7 @@ class Criteri extends Model
     {
         return $this->hasMany('App\Models\Activitat', 'criteris_ids', 'id');
     }
-    
+
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
@@ -52,7 +52,7 @@ class Criteri extends Model
     {
         return $this->hasMany('App\Models\ActivitatCriteri', 'criteri_id', 'id');
     }
-    
+
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
@@ -60,6 +60,6 @@ class Criteri extends Model
     {
         return $this->hasOne('App\Models\Ra', 'id', 'ra_id');
     }
-    
+
 
 }
