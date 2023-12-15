@@ -19,14 +19,14 @@
                     </div>
 
                     <div class="card-body">
-                        
+
                         <div class="form-group">
                             <strong>Description:</strong>
                             {{ $contingut->description }}
                         </div>
                         <div class="form-group">
-                            <strong>Ra Id:</strong>
-                            {{ $contingut->ra_id }}
+                            <strong>RA:</strong>
+                            {{ $contingut->ra->name }}
                         </div>
 
                     </div>

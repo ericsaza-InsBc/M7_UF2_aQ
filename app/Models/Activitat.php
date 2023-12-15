@@ -30,9 +30,10 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Activitat extends Model
 {
-    
+
     static $rules = [
 		'description' => 'required',
+		'hours' => 'required',
 		'programacion_id' => 'required',
 		'uf_id' => 'required',
 		'ra_ids' => 'required',
@@ -47,7 +48,7 @@ class Activitat extends Model
      *
      * @var array
      */
-    protected $fillable = ['description','programacion_id','uf_id','ra_ids','criteris_ids','contingut_ids'];
+    protected $fillable = ['description', 'hours', 'programacion_id','uf_id','ra_ids','criteris_ids','contingut_ids'];
 
 
     /**
@@ -57,7 +58,7 @@ class Activitat extends Model
     {
         return $this->hasMany('App\Models\ActivitatContingut', 'activitat_id', 'id');
     }
-    
+
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
@@ -65,7 +66,7 @@ class Activitat extends Model
     {
         return $this->hasMany('App\Models\ActivitatCriteri', 'activitat_id', 'id');
     }
-    
+
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
@@ -73,7 +74,7 @@ class Activitat extends Model
     {
         return $this->hasMany('App\Models\ActivitatRa', 'activitat_id', 'id');
     }
-    
+
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
@@ -81,7 +82,7 @@ class Activitat extends Model
     {
         return $this->hasOne('App\Models\Contingut', 'id', 'contingut_ids');
     }
-    
+
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
@@ -89,7 +90,7 @@ class Activitat extends Model
     {
         return $this->hasOne('App\Models\Criteri', 'id', 'criteris_ids');
     }
-    
+
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
@@ -97,7 +98,7 @@ class Activitat extends Model
     {
         return $this->hasOne('App\Models\Programacion', 'id', 'programacion_id');
     }
-    
+
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
@@ -105,7 +106,7 @@ class Activitat extends Model
     {
         return $this->hasOne('App\Models\Ra', 'id', 'ra_ids');
     }
-    
+
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
@@ -113,6 +114,6 @@ class Activitat extends Model
     {
         return $this->hasOne('App\Models\Uf', 'id', 'uf_id');
     }
-    
+
 
 }

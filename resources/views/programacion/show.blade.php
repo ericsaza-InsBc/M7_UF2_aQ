@@ -19,7 +19,7 @@
                     </div>
 
                     <div class="card-body">
-                        
+
                         <div class="form-group">
                             <strong>Description:</strong>
                             {{ $programacion->description }}
@@ -29,12 +29,12 @@
                             {{ $programacion->academic_year }}
                         </div>
                         <div class="form-group">
-                            <strong>Modul Id:</strong>
-                            {{ $programacion->modul_id }}
+                            <strong>Modul:</strong>
+                            {{ $programacion->modul->name }}
                         </div>
                         <div class="form-group">
-                            <strong>User Id:</strong>
-                            {{ $programacion->user_id }}
+                            <strong>Usuari:</strong>
+                            {{ $programacion->user->name }}
                         </div>
 
                     </div>

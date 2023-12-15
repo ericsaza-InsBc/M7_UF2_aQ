@@ -35,13 +35,14 @@
                                 <thead class="thead">
                                     <tr>
                                         <th>No</th>
-                                        
+
 										<th>Description</th>
-										<th>Programacion Id</th>
-										<th>Uf Id</th>
-										<th>Ra Ids</th>
-										<th>Criteris Ids</th>
-										<th>Contingut Ids</th>
+										<th>Hours</th>
+										<th>Programacio</th>
+										<th>UF</th>
+										<th>RA</th>
+										<th>Criteris</th>
+										<th>Continguts</th>
 
                                         <th></th>
                                     </tr>
@@ -50,13 +51,14 @@
                                     @foreach ($activitats as $activitat)
                                         <tr>
                                             <td>{{ ++$i }}</td>
-                                            
+
 											<td>{{ $activitat->description }}</td>
-											<td>{{ $activitat->programacion_id }}</td>
-											<td>{{ $activitat->uf_id }}</td>
-											<td>{{ $activitat->ra_ids }}</td>
-											<td>{{ $activitat->criteris_ids }}</td>
-											<td>{{ $activitat->contingut_ids }}</td>
+											<td>{{ $activitat->hours }}</td>
+											<td>{{ $activitat->programacion->description }}</td>
+											<td>{{ $activitat->uf->name }}</td>
+											<td>{{ $activitat->ra->name }}</td>
+											<td>{{ $activitat->criteri->criteris }}</td>
+											<td>{{ $activitat->contingut->continguts }}</td>
 
                                             <td>
                                                 <form action="{{ route('activitats.destroy',$activitat->id) }}" method="POST">
