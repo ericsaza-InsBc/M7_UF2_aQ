@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Models;
+
 use App\Models\Contingut;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
@@ -33,13 +34,13 @@ class Activitat extends Model
 {
 
     static $rules = [
-		'description' => 'required',
-		'hours' => 'required',
-		'programacion_id' => 'required',
-		'uf_id' => 'required',
-		'ra_ids' => 'required',
-		'criteris_ids' => 'required',
-		'contingut_ids' => 'required',
+        'description' => 'required',
+        'hours' => 'required',
+        'programacion_id' => 'required',
+        'uf_id' => 'required',
+        'ra_ids' => 'required',
+        'criteris_ids' => 'required',
+        'contingut_ids' => 'required',
     ];
 
     protected $perPage = 20;
@@ -49,35 +50,25 @@ class Activitat extends Model
      *
      * @var array
      */
-    protected $fillable = ['description', 'hours', 'programacion_id','uf_id','ra_ids','criteris_ids','contingut_ids'];
+    protected $fillable = ['description', 'hours', 'programacion_id', 'uf_id', 'ra_ids', 'criteris_ids', 'contingut_ids'];
 
 
 
     public function continguts(): BelongsToMany
     {
-       return $this->belongsToMany(Contingut::class);
+        return $this->belongsToMany(Contingut::class);
     }
 
-<<<<<<< HEAD
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
-     */
-    public function activitatCriteris()
-=======
+
     public function criteris(): BelongsToMany
->>>>>>> 84a744dfb450146dd3571c6b346e13da7789f44c
     {
         return $this->belongsToMany(Criteri::class);
     }
 
-<<<<<<< HEAD
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function activitatRas()
-=======
-    public function ras(): BelongsToMany
->>>>>>> 84a744dfb450146dd3571c6b346e13da7789f44c
     {
         return $this->belongsToMany(Ra::class);
     }
@@ -121,6 +112,4 @@ class Activitat extends Model
     {
         return $this->hasOne('App\Models\Uf', 'id', 'uf_id');
     }
-
-
 }
