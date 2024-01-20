@@ -23,7 +23,7 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Ra extends Model
 {
-    
+
     static $rules = [
 		'name' => 'required',
 		'uf_id' => 'required',
@@ -44,9 +44,9 @@ class Ra extends Model
      */
     public function activitats()
     {
-        return $this->hasMany('App\Models\Activitat', 'ra_ids', 'id');
+        return $this->belongsToMany(Activitat::class);
     }
-    
+
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
@@ -54,7 +54,7 @@ class Ra extends Model
     {
         return $this->hasMany('App\Models\ActivitatRa', 'ra_id', 'id');
     }
-    
+
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
@@ -62,7 +62,7 @@ class Ra extends Model
     {
         return $this->hasMany('App\Models\Contingut', 'ra_id', 'id');
     }
-    
+
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
@@ -70,7 +70,7 @@ class Ra extends Model
     {
         return $this->hasMany('App\Models\Criteri', 'ra_id', 'id');
     }
-    
+
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
@@ -78,6 +78,6 @@ class Ra extends Model
     {
         return $this->hasOne('App\Models\Uf', 'id', 'uf_id');
     }
-    
+
 
 }

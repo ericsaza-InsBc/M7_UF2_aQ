@@ -9,6 +9,7 @@ use App\Models\Uf;
 use App\Models\Modul;
 use App\Models\Ra;
 use App\Models\Criteri;
+use App\Models\Programacion;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
@@ -31,7 +32,11 @@ class DatabaseSeeder extends Seeder
             'email' => 'admin@admin.com',
             'password' => bcrypt('admin'),
         ]);
-
+        DB::table('users')->insert([
+            'name' => 'Oriol miro',
+            'email' => 'omiro@insbaixcamp.com',
+            'password' => bcrypt('Omiro1234'),
+        ]);
         $modul = Modul::create([
             'name' => 'M7',
             'hours' => 33,

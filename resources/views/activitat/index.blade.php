@@ -37,11 +37,12 @@
                                         <th>No</th>
 
 										<th>Description</th>
+										<th>Hores</th>
 										<th>Programacio</th>
 										<th>UF</th>
-										<th>RA</th>
+                                        <th>RA</th>
 										<th>Criteris</th>
-										<th>Contingut</th>
+										<th>Continguts</th>
 
                                         <th></th>
                                     </tr>
@@ -55,7 +56,7 @@
 											<td>{{ $activitat->hours }}</td>
 											<td>{{ $activitat->programacion->description }}</td>
 											<td>{{ $activitat->uf->name }}</td>
-											<td>{{ $activitat->ra->name }}</td>
+                                            <td>{{ $activitat->criteri->ra->name }}</td>
 											<td>{{ $activitat->criteri->criteris }}</td>
 											<td>{{ $activitat->contingut->continguts }}</td>
 

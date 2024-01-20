@@ -100,9 +100,9 @@ class Activitat extends Model
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
-    public function ra()
+    public function ras()
     {
-        return $this->hasOne('App\Models\Ra', 'id', 'ra_ids');
+        return $this->belongsToMany(Ra::class);
     }
 
     /**
